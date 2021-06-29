@@ -1,0 +1,296 @@
+<html>
+<head>
+	<title>Registration</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	body {background-color: green;}
+	* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.container {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
+}
+
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
+}
+
+.header h2 {
+	margin: 0;
+}
+
+.form {
+	padding: 30px 40px;	
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+
+
+.form button {
+	background-color: #045de9;
+background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+	border: 2px solid #8e44ad;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+	</style>
+	
+</head>
+<body>
+
+
+	<div class="container"><br>
+
+		<div class="header">
+		<h2>Enter Your Details</h2>
+		</div>
+		
+		<div class="col-lg-6 m-auto d-block">
+			
+			<form action="#" onsubmit="return validation()" class="form" id="form">
+				
+				<div class="form-control">
+					<label for="username" class="font-weight-bold"> Employee Name: </label>
+					<input type="text" name="user" class="form-control" id="user" autocomplete="off">
+					<span id="username" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> Employee ID: </label>
+					<input type="text" name="empid" class="form-control" id="empid" autocomplete="off">
+					<span id="empids" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> Password: </label>
+					<input type="text" name="pass" class="form-control" id="pass" autocomplete="off">
+					<span id="passwords" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> Confirm Password: </label>
+					<input type="text" name="conpass" class="form-control" id="conpass" autocomplete="off">
+					<span id="confrmpass" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> Mobile Number: </label>
+					<input type="text" name="mobile" class="form-control" id="mobileNumber" autocomplete="off">
+					<span id="mobileno" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> Email: </label>
+					<input type="text" name="email" class="form-control" id="emails" autocomplete="off">
+					<span id="emailids" class="text-danger font-weight-bold"> </span>
+				</div>
+
+
+				<div class="form-control">
+					<label class="font-weight-bold">Address: </label>
+					<input type="text" name="addr" class="form-control" id="addr" autocomplete="off">
+					<span id="address" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> Place : </label>
+					<input type="text" name="place" class="form-control" id="place" autocomplete="off">
+					<span id="placedetails" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold">District :</label>
+					<input type="text" name="dist" class="form-control" id="dist" autocomplete="off">
+					<span id="district" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-control">
+					<label class="font-weight-bold"> State: </label>
+					<input type="text" name="state" class="form-control" id="state" autocomplete="off">
+					<span id="states" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<button class="btn btn-success">Submit</button>
+			</form><br><br>
+
+
+		</div>
+	</div>
+
+
+
+	<script type="text/javascript">
+		
+
+		function validation(){
+
+			var user = document.getElementById('user').value;
+			var empid = document.getElementById('empid').value;
+			var pass = document.getElementById('pass').value;
+			var confirmpass = document.getElementById('conpass').value;
+			var mobileNumber = document.getElementById('mobileNumber').value;
+			var emails = document.getElementById('emails').value;
+			var place = document.getElementById('place').value;
+			var addr = document.getElementById('addr').value;
+			var dist = document.getElementById('dist').value;
+			var state = document.getElementById('state').value;
+
+
+
+
+			if(user == ""){
+				document.getElementById('username').innerHTML ="Username can't be empty";
+				return false;
+			}
+			if((user.length <= 3) || (user.length > 15)) {
+				document.getElementById('username').innerHTML ="Username must be between 3 and 15";
+				return false;	
+			}
+			if(!isNaN(user)){
+				document.getElementById('username').innerHTML ="only characters are allowed";
+				return false;
+			}
+
+
+
+			if(empid == ""){
+				document.getElementById('empids').innerHTML ="ID can't be empty";
+				return false;
+			}
+
+
+
+			if(pass == ""){
+				document.getElementById('passwords').innerHTML ="Please fill the password field";
+				return false;
+			}
+			if((pass.length <= 4) || (pass.length > 10)) {
+				document.getElementById('passwords').innerHTML ="Passwords lenght must be between  4 and 10";
+				return false;	
+			}
+
+
+			if(pass!=confirmpass){
+				document.getElementById('confrmpass').innerHTML ="Password does not match";
+				return false;
+			}
+
+
+
+			if(confirmpass == ""){
+				document.getElementById('confrmpass').innerHTML ="Please fill the confirmpassword field";
+				return false;
+			}
+
+
+
+
+			if(mobileNumber == ""){
+				document.getElementById('mobileno').innerHTML ="Please fill the mobile number field";
+				return false;
+			}
+			if(isNaN(mobileNumber)){
+				document.getElementById('mobileno').innerHTML ="only digits";
+				return false;
+			}
+			if(mobileNumber.length!=10){
+				document.getElementById('mobileno').innerHTML ="Mobile Number must be 10 digits only";
+				return false;
+			}
+
+
+
+			if(emails == ""){
+				document.getElementById('emailids').innerHTML ="Please fill the email id field";
+				return false;
+			}
+			if(emails.indexOf('@') <= 0 ){
+				document.getElementById('emailids').innerHTML =" @ Missing";
+				return false;
+			}
+
+			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
+				document.getElementById('emailids').innerHTML =". Missing";
+				return false;
+			}
+
+			if(addr == ""){
+				document.getElementById('address').innerHTML ="Address can't be empty";
+				return false;
+			}
+
+
+
+			if(place == ""){
+				document.getElementById('placedetails').innerHTML ="Place can't be empty";
+				return false;
+			}
+			
+			
+			if(dist == ""){
+				document.getElementById('district').innerHTML ="District can't be empty";
+				return false;
+			}
+
+			if(state == ""){
+				document.getElementById('states').innerHTML ="State can't be empty";
+				return false;
+			}
+		}
+
+	</script>
+
+</body>
+</html>
